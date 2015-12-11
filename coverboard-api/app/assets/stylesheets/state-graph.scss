@@ -52,3 +52,7 @@
     border-top: $state-graph-arrow-size solid $state-graph-bad-color;
   }
 }
+
+.state-graph__trend--zero {
+  color: $state-graph-neutral-color;
+}

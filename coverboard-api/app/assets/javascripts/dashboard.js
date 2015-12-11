@@ -44,7 +44,10 @@
     stateGraph.find('.state-graph__name').text(graphData.name);
     stateGraph.find('.state-graph__value').text(graphData.value);
     trend.text(graphData.diff + "%");
-    if(graphData.positive){
+    if(graphData.diff === 0){
+      trend.addClass('state-graph__trend--zero');
+    }
+    else if(graphData.positive){
       trend.addClass('state-graph__trend--up');
     }
     else {
@@ -56,18 +59,16 @@
 
   function generateBarGraph(graphData){
     var barGraph = $(barTemplate.html()),
-        labels,
+        wrapper,
         bars;
 
     bars = graphData.data.map(function(bar){
       return getBarElement(bar);
     });
 
-    labels = barGraph.html();
-
-    barGraph.html('');
-    barGraph.append(labels);
-    barGraph.append(bars.join(''));
+    wrapper = barGraph.find('.bar-graph__wrapper');
+    wrapper.html('');
+    wrapper.append(bars.join(''));
     barGraph.find('.bar-graph__y-label').text(graphData.label.y);
     barGraph.find('.bar-graph__x-label').text(graphData.label.x);
 
