@@ -9,7 +9,7 @@ class Metric < ActiveRecord::Base
 
   validates :name, inclusion: Metric::NAMES
 
-  scope :for_trends, -> { order(timestamp: :desc).limit(60) }
+  scope :for_trends, -> { order(timestamp: :asc).limit(60) }
   scope :for_gauges, -> { order(timestamp: :desc).limit(2) }
 
   def self.named(name)

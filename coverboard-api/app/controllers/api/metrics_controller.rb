@@ -14,7 +14,7 @@ class Api::MetricsController < Api::BaseController
     return json_errors unless @project
 
     render json: {
-               charts: [
+               charts: {
                    trends: [
                        MetricPresenter::Trend.new(@project, 'coverage-all-files', t('metrics.charts.trends.label_x'), t('metrics.charts.trends.label_y'))
                    ],
@@ -25,7 +25,7 @@ class Api::MetricsController < Api::BaseController
                         gauge('coverage-helpers'),
                         gauge('coverage-mailers')
                    ]
-               ]
+               }
            }
   end
 

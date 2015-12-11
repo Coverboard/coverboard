@@ -9,6 +9,9 @@
     barTemplate = $('#bar-graph-template');
     timeGraph = $('.time-graph');
     stateGraphs = $('.state-graphs');
+
+    setInterval(pullData, (1000 * 60 * 60 * 4));
+    pullData();
   }
 
   function render(data){
@@ -80,6 +83,16 @@
     barElement.text(bar + '%');
 
     return barElement[0].outerHTML;
+  }
+
+  function pullData(){
+    $.ajax ({
+      url : '/api/metrics/qwerty123456',
+      method: 'GET',
+      success: function(result){
+        render(result);
+      }
+    })
   }
 
   $(init);
