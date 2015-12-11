@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   
   get 'dashboard/index'
 
-  resources :metrics, only: :create, defaults: { :format => :json }
+  namespace :api do
+    resources :metrics, only: :create, defaults: { :format => :json }
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
