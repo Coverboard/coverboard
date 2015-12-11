@@ -9,6 +9,13 @@ Must run on our shitty raspberry py!
 - No PHP!
 `End of rules`
 
+## Coverage
+Run in this order:
+
+- `gem install bundler`
+- `bundle install`
+
+
 ## Team members
 - Yair
 - Michal
