@@ -9,3 +9,17 @@
 
 Project.create name: 'sample', uid: 'qwerty123456'
 Project.create name: 'with-random-uid'
+
+
+
+demo_project = Project.create name: 'demo', uid: 'demo'
+
+time = DateTime.now.strftime('%s')
+
+20.times do |delta|
+  Metric::NAMES.each do |metric|
+    Metric.create name: metric, value: rand(100), timestamp: time.to_i + 1000*delta, project: demo_project
+  end
+end
+
+
