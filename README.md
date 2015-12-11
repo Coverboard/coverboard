@@ -1,9 +1,10 @@
 # CoverBoard
 
-
-## The game of code
-Automation of nightly builds with code coverage. This metrics are going to be historic and displayed on a fancy way on a screen.
+## The COVERBOARD!
+Display of nightly builds with code coverage. This metrics are going to be historic and displayed on a fancy way on a screen.
 Must run on our shitty raspberry py!
+
+![Logo](http://orig12.deviantart.net/8830/f/2012/355/5/e/16_bit_hoverboard_w__santa_hat_by_joegpcom-d5oqjbp.gif)
 
 ## Rules
 - No PHP!
