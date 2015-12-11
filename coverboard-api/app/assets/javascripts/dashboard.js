@@ -86,7 +86,7 @@
     barElement.addClass('bar-graph__bar');
     barElement.css({
       height: bar + '%',
-      background: 'rgb(240,' + bar + ', 0)'
+      background: 'rgb(240,' + (100 + bar) + ', 0)'
     });
     barElement.text(bar + '%');
 
