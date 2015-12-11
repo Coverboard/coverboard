@@ -8,7 +8,7 @@ module MetricPresenter
       self.positive = true
       self.diff = 0
 
-      current, previous = project.metrics.named(metric_name).for_gauges
+      previous, current = project.metrics.named(metric_name).for_gauges
       return unless current
 
       self.value = current.value
