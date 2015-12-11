@@ -12,8 +12,13 @@
     stateGraphs = $('.state-graphs');
     projectId = getProjectId();
 
-    setInterval(pullData, (1000 * 60 * 60 * 4));
-    pullData();
+    if(projectId) {
+      setInterval(pullData, (1000 * 60 * 60 * 4));
+      pullData();
+    }
+    else {
+      renderNotFound();
+    }
   }
 
   function render(data){
@@ -116,6 +121,10 @@
         render(result);
       }
     })
+  }
+
+  function renderNotFound(){
+    $('.graphs').html( $('#not-found-template').html() );
   }
 
   $(init);
