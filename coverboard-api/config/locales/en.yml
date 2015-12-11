@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  metrics:
+    errors:
+      no_project: 'Wrong project uid'

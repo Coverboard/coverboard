@@ -1,26 +1,38 @@
 class Api::MetricsController < Api::BaseController
   def create
-    metric = set_metric
+    status, errors = persist_metrics
 
-    if metric.save
+    if status
       json_ok
     else
-      json_errors metric.errors
+      json_errors errors
     end
   end
 
   private
     def post_params
-      params.permit(:uid, :metric, :value, :ts)
+      params.slice(:uid, :metrics, :ts)
     end
 
-    def set_metric
+    def persist_metrics
       metric_data = post_params
-      metric = Metric.new
-      metric.project = Project.find_by_uid(metric_data[:uid])
-      metric.name = metric_data[:metric]
-      metric.value = metric_data[:value]
-      metric.timestamp = metric_data[:ts]
-      metric
+      errors = {}
+
+      project = Project.find_by_uid(metric_data[:uid])
+      return false, [t('metrics.errors.no_project')] if project.nil?
+
+      metric_data[:metrics].each do |metric_name, metric_value|
+        metric = Metric.new
+        metric.project = project
+        metric.name = metric_name
+        metric.value = metric_value
+        metric.timestamp = metric_data[:ts]
+
+        unless metric.save
+          errors[metric_name] = metric.errors
+        end
+      end
+
+      return errors.empty?, errors
     end
 end
