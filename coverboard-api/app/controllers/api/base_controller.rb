@@ -8,4 +8,12 @@ class Api::BaseController < ActionController::Base
                  payload: payload
              }
     end
+
+    def json_ok
+      json_response 'OK'
+    end
+
+    def json_errors(errors)
+      json_response 'ERROR', errors
+    end
 end

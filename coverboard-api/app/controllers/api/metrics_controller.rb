@@ -3,9 +3,9 @@ class Api::MetricsController < Api::BaseController
     metric = set_metric
 
     if metric.save
-      json_response 'OK'
+      json_ok
     else
-      json_response 'ERROR', metric.errors
+      json_errors metric.errors
     end
   end
 
@@ -17,14 +17,10 @@ class Api::MetricsController < Api::BaseController
     def set_metric
       metric_data = post_params
       metric = Metric.new
-      metric.project = find_project(metric_data[:uid])
+      metric.project = Project.find_by_uid(metric_data[:uid])
       metric.name = metric_data[:metric]
       metric.value = metric_data[:value]
       metric.timestamp = metric_data[:ts]
       metric
-    end
-
-    def find_project(uid)
-      Project.where({uid: uid}).limit(1).first
     end
 end
