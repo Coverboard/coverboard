@@ -1,6 +1,29 @@
-// Place all the styles related to the dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background: red;
+@import 'variables';
+
+.page {
+  color: $text-color-main;
+  background-color: $background-color-main;
+  font-family: $brand-font;
+}
+
+.page__header {
+  background-image: linear-gradient(#020202, #101112 40%, #191b1d);
+  background-repeat: no-repeat;
+  border: $border-style;
+  text-shadow: $text-shadow;
+  padding:0 20px;
+}
+
+.graphs {
+  height: calc(100vh - 150px);
+}
+
+.time-graph {
+  width: 60%;
+  height: 100%;
+}
+
+.state-graph {
+  width: 40%;
+  height: 100%;
 }
