@@ -8,7 +8,8 @@ require './lib/connector'
 
 # TODO change for a command line parameter
 INDEX_HTML_LOC = '/Users/lautaromazzitelli/Projects/hassle/coverage/index.html'
-UID = 'myCoveredApplication'
+#UID = 'myCoveredApplication'
+UID = 'qwerty123456'
 TIMESTAMP = nil
 
 def parse_index_file
@@ -37,6 +38,7 @@ end
 
 def send_to_api msg
   connector = Connector.new
+  connector.set_connection ({host: 'localhost', port: '3000'})
   connector.set_payload msg
   connector.post
   puts connector.response
