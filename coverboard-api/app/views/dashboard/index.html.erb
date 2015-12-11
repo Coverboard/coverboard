@@ -10,11 +10,16 @@
   </header>
   <section class="graphs">
     <div class="time-graph">
-      <%= render 'bar_graph' %>
     </div>
-    <div class="state-graph">
-
+    <div class="state-graphs">
     </div>
   </section>
+
+  <script type="text/template" id="bar-graph-template">
+    <%= render 'bar_graph' %>
+  </script>
+  <script type="text/template" id="state-graph-template">
+    <%= render 'state_graph' %>
+  </script>
 </body>
 </html>

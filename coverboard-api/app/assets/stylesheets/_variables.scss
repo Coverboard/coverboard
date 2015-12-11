@@ -7,7 +7,14 @@ $text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 $brand-font: 'Montserrat', sans-serif;
 $gauge-font: 'Roboto Slab', serif;
 
-$border-style: 1px solid rgba(0, 0, 0, 0.6);
+$border-style: 2px solid #666;
 
 $background-color-bar: #5bc0de;
 $text-color-bar: #fff;
+
+$state-graph-arrow-size: 10px;
+$state-graph-good-color: green;
+$state-graph-bad-color: red;
+$state-graph-value-font-size: 40px;
+$state-graph-trend-font-size: 30px;
+$state-graph-size: 100px;

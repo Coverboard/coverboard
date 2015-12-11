@@ -3,27 +3,19 @@ require 'json'
 
 class ApplicationMessage
 
-    def set_timestamp( time = nil)
-      if time.nil?
-        @ts = Time.now.getutc
-      else
-        @ts = time
-      end
-    end
+    attr_accessor :metrics
+    attr_accessor :uid
+    attr_accessor :ts
 
-    def set_uid( uid )
-      @uid = uid
-    end
-
-    def set_metrics( metrics )
-      @metrics = metrics
+    def initialize
+      @ts = Time.now.getutc
     end
 
     def to_json
       msg = Hash.new
-      msg['uid'] = @uid
-      msg['ts']  = @ts
-      msg['metrics'] = @metrics
+      msg[:uid] = @uid
+      msg[:ts]  = @ts
+      msg[:metrics] = @metrics
       msg.to_json
     end
 
