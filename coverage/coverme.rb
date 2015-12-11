@@ -10,7 +10,7 @@ require './lib/connector'
 INDEX_HTML_LOC = '/Users/lautaromazzitelli/Projects/hassle/coverage/index.html'
 #UID = 'myCoveredApplication'
 UID = 'qwerty123456'
-TIMESTAMP = nil
+TIMESTAMP = Time.now.getutc
 
 def parse_index_file
 
@@ -30,16 +30,17 @@ end
 
 def create_message metrics
     app_message = ApplicationMessage.new
-    app_message.set_uid UID
-    app_message.set_timestamp TIMESTAMP
-    app_message.set_metrics metrics
+    app_message.uid = UID
+    app_message.ts = TIMESTAMP
+    app_message.metrics = metrics
     return app_message.to_json
 end
 
 def send_to_api msg
   connector = Connector.new
-  connector.set_connection ({host: 'localhost', port: '3000'})
-  connector.set_payload msg
+  connector.host = 'localhost'
+  connector.port = '3000'
+  connector.payload = msg
   connector.post
   puts connector.response
 end

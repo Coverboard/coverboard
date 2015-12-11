@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/lautaro-mazzitelli-helpling/simplecov-html
+  remote: https://github.com/lautaro-mazzitelli-helpling/simplecov-coverboard
   revision: af050ce98cbd3973198ab774286aac4a46b1e549
   specs:
     simplecov-coverboard (0.10.0)
