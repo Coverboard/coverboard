@@ -16,10 +16,10 @@ class Api::MetricsController < Api::BaseController
     render json: {
                charts: {
                    trends: [
-                       MetricPresenter::Trend.new(@project, 'coverage-all-files', t('metrics.charts.trends.label_x'), t('metrics.charts.trends.label_y'))
+                       MetricPresenter::Trend.new(@project, 'coverage', t('metrics.charts.trends.label_x'), t('metrics.charts.trends.label_y'))
                    ],
                    gauges: [
-                        gauge('coverage-all-files'),
+                        gauge('coverage'),
                         gauge('coverage-models'),
                         gauge('coverage-controllers'),
                         gauge('coverage-helpers'),

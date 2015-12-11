@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/lautaro-mazzitelli-helpling/simplecov-html
-  revision: af050ce98cbd3973198ab774286aac4a46b1e549
+  remote: https://github.com/lautaro-mazzitelli-helpling/simplecov-coverboard
+  revision: 20bbf050b27e2f1cdbb827c6a3df7bb02e51d488
   specs:
     simplecov-coverboard (0.10.0)
       simplecov
