@@ -1,0 +1,54 @@
+@import 'variables';
+
+%base-arrow {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: $state-graph-arrow-size solid transparent;
+  border-right: $state-graph-arrow-size solid transparent;
+}
+
+.state-graph {
+
+  font-family: $gauge-font;
+  padding: 10px;
+}
+
+.state-graph__wrapper{
+  width: $state-graph-size;
+  height: $state-graph-size;
+  border:$border-style;
+  padding:20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.state-graph__name {
+}
+
+.state-graph__value {
+  font-size: $state-graph-value-font-size;
+  text-shadow: $text-shadow;
+}
+
+.state-graph__trend {
+  font-size: $state-graph-trend-font-size;
+}
+
+.state-graph__trend--up {
+  color: $state-graph-good-color;
+  &:before {
+    @extend %base-arrow;
+    border-bottom: $state-graph-arrow-size solid $state-graph-good-color;
+  }
+}
+
+.state-graph__trend--down {
+  color: $state-graph-bad-color;
+  &:before {
+    @extend %base-arrow;
+    border-top: $state-graph-arrow-size solid $state-graph-bad-color;
+  }
+}
