@@ -27,3 +27,13 @@
   flex-wrap: wrap;
   justify-content:space-around;
 }
+
+.not-found{
+  display: flex;
+  align-content: center;
+  margin-top:100px;
+}
+.not-found__image {
+  width:500px;
+  margin: auto;
+}
