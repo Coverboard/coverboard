@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/lautaro-mazzitelli-helpling/simplecov-coverboard
-  revision: 20bbf050b27e2f1cdbb827c6a3df7bb02e51d488
+  revision: ad23ad419031d313882a4b4b3ef34af3ebcd1fb5
   specs:
     simplecov-coverboard (0.10.0)
       simplecov
@@ -116,7 +116,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     sass (3.4.20)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)

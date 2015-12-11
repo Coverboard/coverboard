@@ -3,8 +3,12 @@ module MetricPresenter
     attr_accessor :data, :label
 
     def initialize(project, metric_name, label_x, label_y)
-      self.data = project.metrics.named(metric_name).for_trends.map { |metric| [metric.value, metric.created_at] }
+      data = project.metrics.named(metric_name).for_trends
+
+      self.data = data.map { |metric| [metric.value, metric.created_at] }
+
       self.label = {
+          title: data.first.created_at.strftime('Since %a %D'),
           x: label_x,
           y: label_y
       }
