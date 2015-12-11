@@ -7,12 +7,10 @@
 }
 
 .page__header {
-  background-image: linear-gradient(#020202, #101112 40%, #191b1d);
-  background-repeat: no-repeat;
-  border: 1px solid rgba(0,0,0, 0.6);
   text-shadow: $text-shadow;
   padding:0 20px;
   font-size:40px;
+  color: $text-color-brand;
 }
 
 .graphs {
@@ -28,4 +26,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
+}
+
+.not-found{
+  display: flex;
+  align-content: center;
+  margin-top:100px;
+}
+.not-found__image {
+  width:500px;
+  margin: auto;
 }
