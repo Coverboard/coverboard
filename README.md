@@ -25,6 +25,7 @@ payload:
 ```
 {
     uid: 'qwerty123456',
+    ts: 123423,
     metrics: {
         'coverage': 1300,
         'coverage-models': 50,
