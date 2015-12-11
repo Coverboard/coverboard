@@ -10,10 +10,19 @@
 .bar-graph {
   width: 100%;
   height: 100%;
+  font-family: $gauge-font;
+}
+
+.bar-graph__title {
+  font-size: 30px;
+}
+
+.bar-graph__graph {
+  width: 100%;
+  height: calc(100% - 41px);
   border-left: $border-style;
   border-bottom: $border-style;
   position: relative;
-  font-family: $gauge-font;
   overflow: hidden;
 }
 
@@ -44,11 +53,11 @@
 
 .bar-graph__bar {
   display: flex;
-  height: 90%;
   padding:0 10px;
   background: rgb(240, 200, 0);
   color: $text-color-bar;
   text-shadow: $text-shadow;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-left: 10px solid $background-color-main;

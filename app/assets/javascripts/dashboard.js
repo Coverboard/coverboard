@@ -1,5 +1,6 @@
 (function ($) {
-  var stateTemplate,
+  var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'],
+      stateTemplate,
       barTemplate,
       timeGraph,
       stateGraphs,
@@ -76,19 +77,21 @@
     wrapper.append(bars.join(''));
     barGraph.find('.bar-graph__y-label').text(graphData.label.y);
     barGraph.find('.bar-graph__x-label').text(graphData.label.x);
+    barGraph.find('.bar-graph__title').text(graphData.label.title);
 
     return barGraph[0].outerHTML;
   }
 
   function getBarElement(bar) {
-    var barElement = $('<div />');
+    var barElement = $('<div />'),
+        barValue = bar[0];
 
     barElement.addClass('bar-graph__bar');
     barElement.css({
-      height: bar + '%',
-      'background-color': getColor(bar)
+      height: barValue + '%',
+      'background-color': getColor(barValue)
     });
-    barElement.text(bar + '%');
+    barElement.append('<div class="bar-graph__bar-value">' + barValue + '%</div>');
 
     return barElement[0].outerHTML;
   }
