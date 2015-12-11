@@ -1,0 +1,40 @@
+@import 'variables';
+
+.bar-graph {
+  width: 100%;
+  height: 100%;
+  border-left: $border-style;
+  border-bottom: $border-style;
+  position: relative;
+  margin: 20px;
+  padding: 0 20px;
+  font-family: $gauge-font;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.bar-graph__y-label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+.bar-graph__x-label {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+}
+
+.bar-graph__bar {
+  display: flex;
+  height: 90%;
+  padding:0 10px;
+  background: $background-color-bar;
+  color: $text-color-bar;
+  text-shadow: $text-shadow;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px 5px 0 0;
+}
