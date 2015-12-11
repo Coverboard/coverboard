@@ -15,6 +15,23 @@ Run in this order:
 - `gem install bundler`
 - `bundle install`
 
+## Sending metrics
+Example metrics
+- Total coverage: 13.0%
+- Models coverage: .5%
+
+Request POST /api/metrics
+payload:
+```
+{
+    uid: 'qwerty123456',
+    metrics: {
+        'coverage': 1300,
+        'coverage-models': 50,
+        'coverage-*': x 
+    }
+}
+```
 
 ## Team members
 - Yair
