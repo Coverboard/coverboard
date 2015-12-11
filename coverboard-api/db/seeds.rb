@@ -8,3 +8,4 @@
 
 
 Project.create name: 'sample', uid: 'qwerty123456'
+Project.create name: 'with-random-uid'
