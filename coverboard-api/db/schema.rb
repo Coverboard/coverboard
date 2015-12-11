@@ -11,20 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211102019) do
-
-  create_table "applications", force: :cascade do |t|
-    t.string "uid"
-    t.string "name"
-  end
+ActiveRecord::Schema.define(version: 20151211110819) do
 
   create_table "metrics", force: :cascade do |t|
     t.string   "name"
     t.integer  "value"
     t.integer  "timestamp"
-    t.integer  "application_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
