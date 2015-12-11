@@ -29,7 +29,7 @@ en:
         label_x: time
         label_y: coverage
       gauges:
-        coverage-all-files: Total
+        coverage: Total
         coverage-models: Models
         coverage-controllers: Controllers
         coverage-mailers: Mailers
