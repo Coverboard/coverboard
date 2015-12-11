@@ -8,7 +8,7 @@
   position: relative;
   font-family: $gauge-font;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
@@ -33,6 +33,6 @@
   text-shadow: $text-shadow;
   align-items: center;
   justify-content: center;
-
-  border-radius: 5px 5px 0 0;
+  border-left: 10px solid $background-color-main;
+  border-radius: 0 10px 0 0;
 }

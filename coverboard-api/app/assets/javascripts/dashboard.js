@@ -2,13 +2,15 @@
   var stateTemplate,
       barTemplate,
       timeGraph,
-      stateGraphs;
+      stateGraphs,
+      projectId;
 
   function init(){
     stateTemplate = $('#state-graph-template');
     barTemplate = $('#bar-graph-template');
     timeGraph = $('.time-graph');
     stateGraphs = $('.state-graphs');
+    projectId = getProjectId();
 
     setInterval(pullData, (1000 * 60 * 60 * 4));
     pullData();
@@ -85,9 +87,29 @@
     return barElement[0].outerHTML;
   }
 
+  function parseQueryString(){
+    var queryString = window.location.search,
+        queryObject = {},
+        entery;
+
+    if(queryString){
+      queryString.substr(1).split('&').forEach(function(pair){
+        entery = pair.split('=', 2);
+        queryObject[entery[0]] = entery[1];
+      });
+    }
+
+    return queryObject;
+  }
+
+  function getProjectId(){
+    var query = parseQueryString();
+    return query.project;
+  }
+
   function pullData(){
     $.ajax ({
-      url : '/api/metrics/qwerty123456',
+      url : '/api/metrics/' + projectId,
       method: 'GET',
       success: function(result){
         render(result);
