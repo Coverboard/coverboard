@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  root 'dashboard#index'
+  
   get 'dashboard/index'
+
+  resources :metrics, only: :create, defaults: { :format => :json }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dashboard#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -32,7 +36,7 @@ Rails.application.routes.draw do
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
-  #   end
+  #   end                                                                    st
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
