@@ -15,7 +15,7 @@ module MetricPresenter
 
       return unless previous
 
-      self.diff = previous.value - current.value
+      self.diff = current.value - previous.value
       self.positive = self.diff >= 0
     end
   end
