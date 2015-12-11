@@ -24,3 +24,13 @@ en:
   metrics:
     errors:
       no_project: 'Wrong project uid'
+    charts:
+      trends:
+        label_x: time
+        label_y: coverage
+      gauges:
+        coverage-all-files: Total
+        coverage-models: Models
+        coverage-controllers: Controllers
+        coverage-mailers: Mailers
+        coverage-helpers: Helpers

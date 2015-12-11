@@ -13,7 +13,7 @@ class Api::BaseController < ActionController::Base
       json_response 'OK'
     end
 
-    def json_errors(errors)
+    def json_errors(errors = [])
       json_response 'ERROR', errors
     end
 end

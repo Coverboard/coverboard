@@ -9,7 +9,31 @@ class Api::MetricsController < Api::BaseController
     end
   end
 
+  def show
+    @project = Project.find_by_uid(params[:id])
+    return json_errors unless @project
+
+    render json: {
+               charts: [
+                   trends: [
+                       MetricPresenter::Trend.new(@project, 'coverage-all-files', t('metrics.charts.trends.label_x'), t('metrics.charts.trends.label_y'))
+                   ],
+                   gauges: [
+                        gauge('coverage-all-files'),
+                        gauge('coverage-models'),
+                        gauge('coverage-controllers'),
+                        gauge('coverage-helpers'),
+                        gauge('coverage-mailers')
+                   ]
+               ]
+           }
+  end
+
   private
+    def gauge(metric)
+      MetricPresenter::Gauge.new(@project, metric, t("metrics.charts.gauges.#{metric}"))
+    end
+
     def post_params
       params.slice(:uid, :metrics, :ts)
     end

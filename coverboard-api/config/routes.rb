@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
 
   namespace :api do
-    resources :metrics, only: :create, defaults: { :format => :json }
+    resources :metrics, only: [:show, :create], defaults: { :format => :json }
   end
 
 
