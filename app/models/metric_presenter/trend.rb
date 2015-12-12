@@ -8,10 +8,12 @@ module MetricPresenter
       self.data = data.map { |metric| [metric.value, metric.created_at] }
 
       self.label = {
-          title: data.first.created_at.strftime('Since %a %D'),
           x: label_x,
-          y: label_y
+          y: label_y,
+          title: ''
       }
+
+      label[:title] = data.first.created_at.strftime('Since %a %D') if self.data.first
     end
   end
 end
