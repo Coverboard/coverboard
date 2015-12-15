@@ -1,8 +1,10 @@
 # CoverBoard
 
+[![Build Status](https://travis-ci.org/Coverboard/coverboard.svg)](https://travis-ci.org/Coverboard/coverboard)
+
 ## The COVERBOARD!
 Display of nightly builds with code coverage. This metrics are going to be historic and displayed on a fancy way on a screen.
-Must run on our shitty raspberry py!
+Must run on our raspberry py!
 
 ![Logo](http://orig12.deviantart.net/8830/f/2012/355/5/e/16_bit_hoverboard_w__santa_hat_by_joegpcom-d5oqjbp.gif)
 
@@ -30,15 +32,17 @@ payload:
     metrics: {
         'coverage': 1300,
         'coverage-models': 50,
-        'coverage-*': x 
+        'coverage-helpers': 50,
+        'coverage-controllers': 50,
+        'coverage-mailers': 50
     }
 }
 ```
 
 ## Team members
-- Yair
-- Michal
-- Lautaro
+* [Lautaro](https://www.github.com/lautaro-mazzitelli-helpling)
+* [Michał](https://www.github.com/mfranczakhelpling)
+* [Yair](https://github.com/yair-helpling)
 
 ![Hacking!](http://forums.windowscentral.com/attachments/microsoft-news-rumors/103808d1430749991t-bloody-keyboard-wreck-o.jpg)
 

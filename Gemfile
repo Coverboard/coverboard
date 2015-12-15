@@ -46,7 +46,7 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'simplecov'
-  gem 'simplecov-coverboard', :git => 'https://github.com/lautaro-mazzitelli-helpling/simplecov-coverboard'
+  gem 'simplecov-coverboard', :git => 'https://github.com/coverboard/simplecov-coverboard'
 end
 
 group :development do
