@@ -1,2 +1,4 @@
 coverboard:
   uid: 'qwerty123456'
+  host: localhost
+  port: 3000
