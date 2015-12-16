@@ -51,9 +51,11 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
+if ENV['SIMPLECOV'] == '1'
+  require 'simplecov'
 
-require 'simplecov'
-SimpleCov.start 'rails' do
-  SimpleCov.formatter = SimpleCov::Formatter::CoverBoardFormatter
+  SimpleCov.start 'rails' do
+    SimpleCov.formatter = SimpleCov::Formatter::CoverBoardFormatter
+  end
 end
 
