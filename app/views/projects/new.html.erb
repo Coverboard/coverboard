@@ -1,0 +1,67 @@
+
+<div class="container">
+
+  <div class="jumbotron text-center">
+    <div class="container">
+    <h1>
+        <a href="<%= root_path %>">
+          <img src="<%= image_url('logo.png') %>" alt="CoverBoard" />
+        </a>
+    </h1>
+
+    <p class="lead">Track the code coverage of your rails projects and display it on a dashboard</p>
+
+    <a href="<%= dashboard_path %>?project=demo" class="btn btn-lg btn-success">Check demo</a>
+    </div>
+  </div>
+
+  <a href="https://github.com/coverboard" target="_blank">
+    <img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;"
+         src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-red@2x.png"
+         alt="Fork me on GitHub">
+  </a>
+
+  <div class="page-header">
+    <h2>Install <a href="https://github.com/Coverboard/simplecov-coverboard">simplecov-coverboard</a></h2>
+  </div>
+
+  <div class="alert alert-warning" role="alert">
+    <p>Follow the instructions in <a target="_blank" href="https://github.com/Coverboard/simplecov-coverboard/blob/master/README.md">README.md</a></p>
+  </div>
+
+  <div class="page-header">
+    <h2>Register your project</h2>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container text-center">
+      <p>After you create your project please copy uid(?project=uid) from the dashboard url</p>
+        <%= simple_form_for @project do |f| %>
+            <%= f.input :name, class: 'input-medium', label: 'Project name' %>
+            <%= f.submit class: 'btn btn-primary btn-lg' %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h2>Enjoy the dashboard</h2>
+    <p>CoverBoard is perfect to display it on TV screen</p>
+  </div>
+
+  <img style="width: 640px" src="<%= image_url('tv-dashboard.jpg') %>" alt="" />
+
+  <div class="page-header">
+    <h2>Architecture</h2>
+  </div>
+
+  <img style="width: 640px" src="<%= image_url('architecture.png') %>" alt="" />
+
+  <div class="page-header">
+    <h2>Contribute</h2>
+    <p>Feel free to fork the repositories</p>
+  </div>
+  <ul>
+    <li><a href="https://github.com/Coverboard/simplecov-coverboard">simplecov-coverboard</a></li>
+    <li><a href="https://github.com/Coverboard/coverboard">CoverBoard</a></li>
+  </ul>
+</div>

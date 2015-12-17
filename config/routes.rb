@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'projects#new'
   
   get 'dashboard/index'
+
+
+  get 'dashboard', to: 'dashboard#index'
+
+  resources :projects, only: [:new, :create]
 
   namespace :api do
     resources :metrics, only: [:show, :create], defaults: { :format => :json }
