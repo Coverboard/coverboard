@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController
   def index
     @project_name = get_project_name
+
+    render layout: 'application'
   end
 
   private
